@@ -2,17 +2,17 @@
 
 namespace JeffersonGoncalves\Filament\QuebecRetention;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class QuebecRetentionServiceProvider extends PackageServiceProvider
+class QuebecRetentionServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-quebec-retention';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-quebec-retention')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->name(static::$name)
+            ->hasTranslations();
     }
 }
